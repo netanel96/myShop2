@@ -15,6 +15,7 @@ import OrderScreen from './screens/OrderScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import OrdersScreen from './screens/OrdersScreen';
 
+
 function App() {
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
@@ -31,10 +32,11 @@ function App() {
         <header className="header">
           <div className="brand">
             <button onClick={openMenu}>&#9776;</button>
-            <Link to="/">amazona</Link>
+            <Link to="/">Natishop</Link>
           </div>
           <div className="header-links">
-            <a href="cart.html">Cart</a>
+          <Link to="/cart">Cart</Link>
+           
             {userInfo ? (
               <Link to="/profile">{userInfo.name}</Link>
             ) : (
@@ -52,6 +54,7 @@ function App() {
               </div>
             )}
           </div>
+          
         </header>
         <aside className="sidebar">
           <h3>Shopping Categories</h3>
@@ -68,7 +71,11 @@ function App() {
             </li>
           </ul>
         </aside>
+
+        
+
         <main className="main">
+        
           <div className="content">
             <Route path="/orders" component={OrdersScreen} />
             <Route path="/profile" component={ProfileScreen} />
@@ -85,7 +92,7 @@ function App() {
             <Route path="/" exact={true} component={HomeScreen} />
           </div>
         </main>
-        <footer className="footer">All right reserved.</footer>
+        <footer className="footer">All right reserved to Nati and Nati.</footer>
       </div>
     </BrowserRouter>
   );

@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { listProducts } from '../actions/productActions';
 import Rating from '../components/Rating';
+import cloth1 from '../cloth1.jpg';
 
 function HomeScreen(props) {
   const [searchKeyword, setSearchKeyword] = useState('');
@@ -30,7 +31,12 @@ function HomeScreen(props) {
   };
 
   return (
+    
     <>
+    <div className="extra">
+        <img src={cloth1}  style={{width:"100%"}} alt="Logo" />
+        </div>
+
       {category && <h2>{category}</h2>}
 
       <ul className="filter">
